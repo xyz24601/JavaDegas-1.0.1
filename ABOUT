@@ -1,0 +1,222 @@
+About JavaDegas v.1.0.1
+
+
+JavaDegas is a Gradius-like, straight forward "Shoot'em Up" game.  Use
+the arrow keys to move your ship and 'space' to fire.  It can 
+automatically fire, so you can just hold down the 'space' and it will 
+keep firing.  You can also use 'h', 'j', 'k', and 'l' keys to move 
+your ship, just like the nice old vi editor.  Certain enemies drop 
+"Energy Capsule" when you blow them up.  Pick them up to 
+increase/decrease your power indicator, then select which power to 
+obtain by pressing either 'm' or 'n'.  At the end of the each stage, 
+there is an enemy mother ship waiting.  So far, I only wrote two 
+stages.  People out there can add more enemies, mother ships, and 
+stages.  It shouldn't be that difficult.
+
+
+There are 4+ kinds of energy capsules.
+
+[Green] -- moves power indicator 2 to the right
+[Blue] --- moves power indicator 1 to the right
+[Red] ---- moves power indicator 1 to the left
+[Yellow] - sets power indicator to none
+
+ - - - turns power indicator to slot machine
+                  press 'm' or 'n' to stop
+
+
+Probably, you want to avoid [Red] and definitely [Yellow].  However,
+if you feel lucky, and/or you have nothing to loose, you can take
+your chances by picking them.  One of them may turn out to be a
+"surprise" energy capsule.  Who knows?  You might end up getting the
+power you wanted so bad, or you might end up losing everything.
+
+
+There are 7 power up items.
+
+[Speed Up] -- increases speed
+[Slow Down] - decreases speed
+[Beam] ------ sets to default beam weapon
+[Laser] ----- sets to laser weapon that can penetrate multiple ships
+[Option] ---- adds option that acts like an extra ship
+[Doh!] ------ Doh!
+[Shield] ---- adds shield that's good for 5 hits
+
+
+
+About Music. . .
+
+I originally programmed full length music for this game, but when I
+converted them to au format, each of them were way over 1 mega byte.
+That was unacceptable.  So, I had to trim down a lot of them.  How
+sad.  When I convert this to Java1.2, I'll replace stripped down au
+music with full length midi music.
+
+Stage 1 - Revolutionary Etude by Frederick Chopin
+Boss ---- The Ride of the Valkyries by Wagner
+
+
+
+About SFX. . .
+
+I made all sound effects using my old SoundBlaster16 and midi
+sequencer.  I'd like to re-do them with better quality sound system
+when I have the opportunity.
+
+
+
+About voice. . .
+
+All voices were done by my 3 year old son, Christopher.
+
+
+
+Reported somewhat working platforms. . .
+
+As Applet:
+
+  Sun Sparc Solaris 8 with Netscape 
+  ix86 Windows 95 with IE4/5
+  ix86 Windows 98 with IE5, Netscape 4.7
+  ix86 Windows 98J with IE4J/5J, Netscape 4.7
+  ix86 Windows NT5 with IE5
+  ix86 Windows 2000 with IE5
+  ix86 FreeBSD with Netscape
+
+
+As Stand Alone(no audio):
+
+  Sun Sparc Solaris 7 with java 1.1, kaffe 1.0.5
+
+
+
+History. . .
+
+In the late 80s, my brother showed me a video game called Gradius by
+Konami.  I'd never seen anything like that before.  Power up items
+were cool, background music were cool, graphics were cool.  It was a
+"COOL" game.  I was instantly hooked to this game.  I must have
+spent a couple of months trying to clear all stages.  Good thing, it
+was on MSX computer at home.  I didn't have to spend any 100 yen
+coins at the arcade.
+
+Konami kept releasing sequels to Gradius and as far as I know, they
+all became big hits.  Salamandar, Life Force, Gradius 2, Gradius 3,
+Parodius Da!, Gokujou Parodius Da! were some of them.  Also, Konami
+added extra items when they ported Gradius to other platforms.  For
+example, MSX version had an extra stage that didn't exist in
+original arcade version.  MSX version also had a couple of secret
+stages, where you can get different kind of power items.  No matter
+what platform, no matter which generation, I had real good fun
+playing Gradius series of games.
+
+These days, most games are street fighter style beat the crap out of
+each other kind of games or Wolf 3D kind of 3D shooting games.  I
+don't see games like Gradius any more.  I don't care too much for
+those fighting games, but I admit I enjoyed Wolf 3D and Doom.
+
+Other great games I enjoy playing are the Wing Commander series of
+games by Origin, but their newer products don't run on my old slow
+PC.  Bummer.  Actually, a lot of today's games don't run on my P120.
+Doh!
+
+I used to own a Sharp X68000 computer and played the Gradius series 
+of games probably at least once a day for years.  Did I get sick of
+them after while?  Nope.  I still miss Gradius.  So, I thought I
+should try writing a game like Gradius.  This is my second attempt
+writing a game, so it's not like I'm used to writing games, but I
+decided to try it anyway.
+
+I started out writing it in C++ and Xlib.  At one point, event check
+routines (XCheckMaskEvent, XCheckWindowEvent) started dumping core.
+It happened on both Sun Sparc and PC Linux machines.
+
+After wasting so much time trying to figure out the cause and the
+way to get by, I decided to rewrite the whole thing in C and Xlib.
+I thought maybe C++ is screwing up somewhere in Xlib C API calls.
+Guess what?  Same darn thing!  Event check routines started dumping
+core at one point.  I was pretty much fed up with Xlib calls by
+then, I started to look for an alternate GUI platform.
+
+Where did I turn to?  Back to Java again.  I was disappointed on
+JDK1.2beta, because it kept messing up the graphics on my PC, but
+JDK1.2 seems to run all right.  I do have a problem running Java on
+my Sun Sparc20 with Solaris7.  I cannot send any keyboard input to
+my applets.  It's very strange.  I talked to a friend at Sun, but he
+seems to have no problem at all running my applets on his
+UltraSparc.  Probably there's some goofy component inside my Sparc
+that's causing it, or something.  It's kind of stupid that Sun's own
+Java doesn't run right on Sun's own Sparc Station.  No, I didn't buy
+it from a Sun dealer.  I bought it at an online auction.
+
+So, I code and compile on my Sparc, then test it on Win98/J PC with
+IE4.0/J.  That's the only way I can send my keyboard input to my
+applet.  Why didn't I just develop and test on PC?  I run fvwm95 on
+my Sparc and let me tell you, it's "nice".  Besides, there is
+something wrong with my PC.  I can open one dos prompt without a
+problem, but if I try to (re)open another one, it hangs the whole
+machine.  Doh!  Linux?  Yes, an ancient version of it is installed on
+my PC.  I could use Linux for development, but I paid a lot of money
+for this Sparc Station and I am going to use it to develop
+something!
+
+Despite this goofy environment, I somehow got it to work, so here
+it is.
+
+No, I haven't tried Visual J++ or J Builder.  What for?  I edit files
+in vi and compile with JDK's javac.  Combine them with fvwm95 and I
+got my ultimate development environment.  Even when I have to write
+something for PC, I use vi for windows to edit files.  I only use
+one thing in the whole Visual C++ environment and that is the "Build"
+button.
+
+KDE?  I haven't tried it, yet.  I'll give it a try one of these
+days.
+
+A friend of mine suggested I should use Kopi and Kaffe to develop
+java freeware.  Good idea.  Once I upgrade my Sparc to Solaris 8,
+I'll install those tools.  I also need a bigger hard drive for my
+Sparc, but can't afford "Sun" hardware.  I'll probably get a generic
+SCSI drive and see if it works.
+
+
+
+Future. . .
+
+I haven't figured out how to do the background objects, like
+scrolling floor and ceiling.  It would be cool if I (or somebody)
+can get the Moais to come up and spit those circle things.  Then,
+I'd like to have a stage with a capital ship, like stage 3 on
+R-Type.  That was fun destroying the huge ship.  I'll also add a high
+speed scrolling stage.
+
+I'd like to add missiles once the scrolling floor is in place.
+
+I also like other classic games like Dragon Spirit, Thunderforce,
+Silpheed and R-Type.  I'd love to see them become available
+somewhere.  I'll see what happens. . .
+
+
+
+About New Project. . .
+
+I started working on another game called S1 Eagle.  This one will be
+my original.  You collect energy capsules to gain powers just like
+JavaDegas, but you'll have opportunity to switch your weapons.  In
+JavaDegas, most enemies come from right.  You don't have to have the
+ability to fire backword, up or down.  (Although, it would be nice
+in some occasions.)  In this new game, enemies come from everywhere.
+You'll have to switch your weapons wisely in order to survive.
+
+
+Special Thanks. . .
+
+Mike Chachich
+ - for creating and maintaining official JavaDegas homepage.
+   also, for helping on documentations.  Thanks, Mike.
+
+
+Shinji Umeki (shinji@umeki.org)
+Sep. 9, 2000
+
+

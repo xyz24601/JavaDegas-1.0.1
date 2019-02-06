@@ -1,0 +1,9 @@
+v 1.0.1
+
+- Fixed typo "High Schore"
+- Ship can fire 3 beams, instead of 2
+- Increased Ship ready delay from 25 to 45
+- Made Stage1 into 2 stages
+- Fixed "ghost" capital ship (left over image)
+
+
